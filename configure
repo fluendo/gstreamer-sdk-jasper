@@ -22332,6 +22332,12 @@ if test "$GCC" = yes; then
 	#CFLAGS="$CFLAGS -W -Wall -Wno-long-long -Wformat -Wmissing-prototypes -Wstrict-prototypes"
 fi
 
+case "$host" in
+  *-*-mingw*)
+    LDFLAGS="$LDFLAGS -no-undefined"
+    ;;
+esac
+
 ############################################################
 # Extra stuff for research purposes.
 ############################################################
